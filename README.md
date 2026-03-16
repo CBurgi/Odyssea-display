@@ -11,6 +11,8 @@
 2. if not installed, run `npm i` to install node_modules
 3. run `npm start`
 
+Once running, the site can be seen on `localhost:3000`
+
 ## Test Program
 ### Terminal 3 (Test)
 1. cd into Odyssea-display/test_script
