@@ -1,0 +1,13 @@
+{
+  "drone":{
+    "name":"test-drone",
+    "x":112,
+    "y":112,
+    "z":64,
+    "pitch":0,
+    "yaw":0,
+    "roll":0,
+    "angle":45
+  },
+  "base64":""
+}
