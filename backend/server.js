@@ -45,4 +45,11 @@ io.on('connection', (socket) => {
   console.log('React client connected:', socket.id);
 });
 
-server.listen(4000, () => console.log('Backend listening on port 4000'));
+server.listen(4000, '0.0.0.0', () => {
+  console.log('Backend listening on 0.0.0.0:4000');
+  console.log('PID:', process.pid);
+});
+
+server.on('error', (err) => {
+  console.error('Server listen error:', err);
+});
