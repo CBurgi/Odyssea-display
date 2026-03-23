@@ -1,0 +1,27 @@
+{
+  "drone": {
+    "name": "DJI Mini 5 Pro",
+    "x": -1.4, //+y is north -y south
+    "y": 24.8, 
+    "z": 11.2, //drone altitude
+    "pitch": 0,
+    "yaw": 0,
+    "roll": 0,
+    "heading": 43.7, //angle drone is facing
+    "angle": -28.5 //drone camera angle relative to horizon, always faces straight ahead just vertical angle
+  },
+  "target": {
+    "class": "swimmer",
+    "confidence": 0.91,
+    "x": 962.4, //x and y box centre
+    "y": 544.8,
+    "z": 11.2, //drone altitude again just for potential ease
+    "box": {
+      "x1": 901.0, //actual box coords just in case
+      "y1": 486.2,
+      "x2": 1023.8,
+      "y2": 603.4
+    }
+  },
+  "base64": "<base64 JPEG string here>"
+}
