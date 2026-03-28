@@ -10,15 +10,18 @@ const DisplayCard = ({ item , latest = false }) => {
       <img src={`data:image/png;base64,${item.base64}`} alt={item.title} />
       <div className="info">
         <span className="badge">{item.title}</span>
-        <div className='stats'><div><strong>Drone Location |</strong> {
-          ` X: ${item.droneStats.x} Y: ${item.droneStats.y} Altitiude: ${item.droneStats.z}`
-        }</div></div>
+        <div className='stats'><div style={{whiteSpace: 'pre-wrap'}}>
+          { latest && <strong>Drone Location | </strong>} 
+          {
+            `X:\u00A0${item.droneStats.x}  Y:\u00A0${item.droneStats.y}  Altitiude:\u00A0${item.droneStats.z}`
+          }
+        </div></div>
         { latest && <div className="stats info">
-          <div><strong>Drone View |</strong> {
-            ` Heading: ${item.droneStats.heading} Angle: ${item.droneStats.angle}`
+          <div style={{whiteSpace: 'pre-wrap'}}><strong>Drone View |</strong> {
+            `Heading:\u00A0${item.droneStats.heading}  Angle:\u00A0${item.droneStats.angle}`
           }</div>
-          <div><strong>Swimmer Location |</strong> {
-            ` X: ${item.targetStats?.loc.x} Y: ${item.targetStats?.loc.y}`
+          <div style={{whiteSpace: 'pre-wrap'}}><strong>Swimmer Location |</strong> {
+            `X:\u00A0${item.targetStats?.loc.x}  Y:\u00A0${item.targetStats?.loc.y}`
           }</div>
         </div> }
       </div>

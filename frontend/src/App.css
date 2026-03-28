@@ -15,7 +15,6 @@
 .card {
   background: #fff;
   border-radius: 15px;
-  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
@@ -40,6 +39,8 @@
 .sidebar {
   display: flex;
   flex-direction: column;
+  max-height: 80vh;
+  overflow-y: scroll;
   gap: 20px;
 }
 
