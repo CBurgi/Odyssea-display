@@ -4,6 +4,29 @@ import './App.css';
 
 const socket = io('http://localhost:4000');
 
+const DisplayCard = ({ item , latest = false }) => {
+  return (
+    <div key={item.id} className={`card ${latest ? '' : 'sidebar-card'}`}>
+      <img src={`data:image/png;base64,${item.base64}`} alt={item.title} />
+      <div className="info">
+        <span className="badge">{item.title}</span>
+        <div className='stats'><div><strong>Drone Location |</strong> {
+          ` X: ${item.droneStats.x} Y: ${item.droneStats.y} Altitiude: ${item.droneStats.z}`
+        }</div></div>
+        { latest && <div className="stats info">
+          <div><strong>Drone View |</strong> {
+            ` Heading: ${item.droneStats.heading} Angle: ${item.droneStats.angle}`
+          }</div>
+          <div><strong>Swimmer Location |</strong> {
+            ` X: ${item.targetStats?.loc.x} Y: ${item.targetStats?.loc.y}`
+          }</div>
+        </div> }
+      </div>
+
+    </div>
+  )
+}
+
 function App() {
   const [feed, setFeed] = useState([]);
 
@@ -29,18 +52,7 @@ function App() {
         <div className="dashboard-layout">
           {/* LARGE FEATURED IMAGE */}
           <div className="main-feature">
-            <div className="card">
-              <img src={`data:image/png;base64,${latest.base64}`} alt="Latest" />
-              <div className="info">
-                <span className="badge">{latest.title}</span>
-                <p><strong>Position:</strong> {latest.description}</p>
-                {/* If you passed the stats object: */}
-                <div className="stats">
-                  <span>Pitch: {latest.droneStats?.pitch}°</span>
-                  <span>Roll: {latest.droneStats?.roll}°</span>
-                </div>
-              </div>
-            </div>
+            <DisplayCard item={latest} latest={true} />
           </div>
 
           {/* SIDEBAR MINI FEED */}
@@ -48,18 +60,7 @@ function App() {
             <h3>Previous Updates</h3>
             {history.length === 0 && <p>No history yet...</p>}
             {history.map((item) => (
-              <div key={item.id} className="card sidebar-card">
-                <img src={`data:image/png;base64,${item.base64}`} alt={item.title} />
-                <div className="info">
-                  <span className="badge">{item.title}</span>
-                  <p><strong>Position:</strong> {item.description}</p>
-                  {/* If you passed the stats object: */}
-                  <div className="stats">
-                    <span>Pitch: {item.droneStats?.pitch}°</span>
-                    <span>Roll: {item.droneStats?.roll}°</span>
-                  </div>
-                </div>
-              </div>
+              <DisplayCard item={item} key={item.id} />
             ))}
           </div>
         </div>

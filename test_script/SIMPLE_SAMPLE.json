@@ -7,14 +7,14 @@
     "pitch": 0,
     "yaw": 0,
     "roll": 0,
-    "heading": 43.7, 
-    "angle": -28.5 
+    "heading": 90, 
+    "angle": -80
   },
   "target": {
     "class": "swimmer",
     "confidence": 0.91,
-    "x": 962.4, 
-    "y": 544.8,
+    "x": 300, 
+    "y": 640,
     "z": 11.2, 
     "box": {
       "x1": 901.0, 

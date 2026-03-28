@@ -12,7 +12,7 @@
 }
 
 /* Featured Card Styling */
-.main-feature .card {
+.card {
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -41,28 +41,30 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 85vh; /* Optional: adds scrolling if you have many items */
-  overflow-y: auto;
 }
 
 .sidebar-card img {
   aspect-ratio: 16 / 9;
   height: auto; 
-  width: 100%;
   object-fit: cover;
+  display: block;
+  width: 100%;
 }
 
-.sidebar-card .info {
+.info {
   padding: 10px;
-  font-size: 0.85rem; /* Slightly smaller text for sidebar */
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 .stats {
-  display: flex;
-  gap: 10px;
   font-family: monospace;
   background: #f0f0f0;
   padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 4px;
   margin-top: 5px;
+  
 }

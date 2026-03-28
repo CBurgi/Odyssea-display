@@ -21,6 +21,6 @@ def send_image(image_path, json_path):
 
 
 # Example usage
-for x in range(4):
+for x in range(1):
     n = random.randint(0, 14)
-    send_image(f"test_images/image{n}.png", "test_data.json")
+    send_image(f"test_images/image{n}.png", "SIMPLE_SAMPLE.json")
